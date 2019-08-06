@@ -16,4 +16,8 @@
   padding-bottom:0px;
  overflow-x:hidden;
 }
+body{
+  margin:0;
+  padding:0;
+}
 </style>
