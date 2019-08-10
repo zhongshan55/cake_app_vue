@@ -1,7 +1,7 @@
 <template>
-  <div class="page-tabber">
+  <div class="page-tabbar">
     <div class="page-wrap">
-        <mt-tab-container class="page-tabber-container" v-model="active">
+        <mt-tab-container class="page-tabbar-container" v-model="active">
           <mt-tab-container-item id="home">
               <h1>首页</h1>
           </mt-tab-container-item>
@@ -15,7 +15,8 @@
               <h1>社区</h1>
           </mt-tab-container-item>
           <mt-tab-container-item id="me">
-              <h1>我</h1>
+           <!-- 我的 -->
+              <me></me>
           </mt-tab-container-item>          
         </mt-tab-container>
 
@@ -75,6 +76,7 @@
 
 <script>
 import TabBarIcon from "./common/TabBarIcon.vue"
+import Me from "./me/Me.vue"
 export default {
   data(){
     return{
@@ -89,7 +91,8 @@ export default {
     }
   },
   components:{
-    "tabbaricon":TabBarIcon
+    "tabbaricon":TabBarIcon,
+    "me":Me
   },
   methods:{
      changeState(idx){
@@ -107,5 +110,7 @@ export default {
 </script>
 
 <style scoped>
-
+.page-wrap{
+  padding-bottom: 75px;
+}
 </style>

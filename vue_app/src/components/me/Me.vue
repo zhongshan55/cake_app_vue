@@ -3,7 +3,7 @@
        <div class="strip">
       <div class="me-top">
           <div class="me-user">
-              <span>登录/注册</span>     
+              <span @click="go_login">登录/注册</span>     
           <div class="me-photo"><img src="../../assets/me1.png" alt=""></div>
           </div>
       </div>
@@ -86,6 +86,11 @@
 export default {
    data(){
        return{}
+   },
+   methods:{
+       go_login(){
+           this.$router.push("/Login")
+       }
    }    
 }
 </script>

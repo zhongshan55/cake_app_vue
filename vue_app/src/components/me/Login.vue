@@ -2,7 +2,7 @@
     <div class="app-login">
         <div class="login-top">            
             <img src="../../../public/img/logo.png" alt="" class="logo-icon">
-            <div class="return"><img src="../../../public/img/return.png" alt=""></div>
+            <div class="return" @click="return_me" ><img src="../../../public/img/return.png" alt=""></div>
         </div>
         <div class="login-selected">
         <mt-navbar class="page-part" v-model="selected">
@@ -16,11 +16,11 @@
                 <mt-field placeholder="请输入密码" type="password" v-model="upwd"></mt-field>
                 <mt-button size="large">登录</mt-button>
             </mt-tab-container-item>
+            <!-- 注册内容 -->
             <mt-tab-container-item id="reg">
-                注册
                 <mt-field placeholder="请输入用户名" v-model="uname"></mt-field>
-                <mt-field placeholder="请输入密码" text="password" v-model="upwd"></mt-field>
-                <mt-field placeholder="请确认密码" v-model="upwd"></mt-field>
+                <mt-field placeholder="请输入密码" type="password" v-model="upwd"></mt-field>
+                <mt-field placeholder="请确认密码" type="password"></mt-field>
                 <mt-field placeholder="请输入用户姓名" v-model="user_name"></mt-field>          
                 <mt-button size="large">注册</mt-button>
             </mt-tab-container-item>
@@ -30,12 +30,20 @@
     </div>
 </template>
 <script>
+// import Index from '../Index.vue'
 export default {
     data(){
         return{
           selected:"login",
           uname:"",
-          upwd:""
+          upwd:"",
+          user_name:""
+        }
+    },
+    methods:{
+        return_me(){       
+            // 返回上一页
+            history.go(-1); 
         }
     }
 }
