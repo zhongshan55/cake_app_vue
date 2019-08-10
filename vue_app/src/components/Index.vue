@@ -1,6 +1,6 @@
 <template>
   <div class="page-tabber">
-    <div class="page-warp">
+    <div class="page-wrap">
         <mt-tab-container class="page-tabber-container" v-model="active">
           <mt-tab-container-item id="home">
               <h1>首页</h1>
